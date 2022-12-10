@@ -13,10 +13,11 @@ contract CryptoBlockLab2 is ERC20 {
 		uint id;
         address owner_address;
 
-    mapping(bool => bool) a;
-    mapping(int => int) b;
-    mapping(address => address) c;
-    mapping(uint32 => uint32) d;
+//    mapping(bool => bool) a;
+//    mapping(int => int) b;
+//    mapping(address => address) c;
+//    mapping(uint32 => uint32) d;
+    mapping(address => DataDtructure) e;
 	} 
     
 
