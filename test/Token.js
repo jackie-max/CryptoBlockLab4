@@ -35,7 +35,7 @@ describe("CryptoBlockLab2.sol", () => {
         bobAddress = await bob.getAddress();
     });
 
-    describe("Correct setup", () => {
+    describe("DataStructure", () => {
         it("should be named 'CryptoBlockLab2", async () => {
             const name = await contract.name();
             expect(name).to.equal("CryptoBlockLab2");
@@ -47,6 +47,11 @@ describe("CryptoBlockLab2.sol", () => {
         it("owner should have all the supply", async () => {
             const ownerBalance = await contract.balanceOf(ownerAddress);
             expect(ownerBalance).to.equal(initialSupply);
+        });
+        it("Should check addr", async() =>{
+            const check = await CryptoBlockLab2.DataStructure(addr.address);
+            let ad = await CryptoBlockLab2.DataStructure(addr.address);
+            expect (ad.addr).to.equal(addr.address)
         });
     });
 
@@ -70,3 +75,4 @@ describe("CryptoBlockLab2.sol", () => {
         });
     });
 });
+
