@@ -49,9 +49,9 @@ describe("CryptoBlockLab2.sol", () => {
             expect(ownerBalance).to.equal(initialSupply);
         });
         it("Should check addr", async() =>{
-            const check = await CryptoBlockLab2.DataStructure(addr.address);
-            let ad = await CryptoBlockLab2.DataStructure(addr.address);
-            expect (ad.addr).to.equal(addr.address)
+            const check = await CryptoBlockLab2.DataStructure(address.address);
+            let ad = await CryptoBlockLab2.DataStructure(address.address);
+            expect (ad.address).to.equal(address.address)
         });
     });
 
