@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Token contract", function () {
+describe("CryptoBlockLab2", function () {
   it("Deployment should assign the total supply of tokens to the owner", async function () {
     const [owner] = await ethers.getSigners();
 
@@ -14,6 +14,12 @@ describe("Token contract", function () {
   });
 });
 
+function getDataStructure { 
+  return {
+		address Address; // адрес
+  };
+}
+  
 describe("CryptoBlockLab2.sol", () => {
     let contractFactory;
     let contract;
@@ -33,6 +39,7 @@ describe("CryptoBlockLab2.sol", () => {
         ownerAddress = await owner.getAddress();
         aliceAddress = await alice.getAddress();
         bobAddress = await bob.getAddress();
+        DataStruc = getDataStructure(ownerAddress.address)
     });
 
     describe("DataStructure", () => {
@@ -40,19 +47,30 @@ describe("CryptoBlockLab2.sol", () => {
             const name = await contract.name();
             expect(name).to.equal("CryptoBlockLab2");
         });
-        it("should have correct supply", async () => {
-            const supply = await contract.totalSupply();
-            expect(supply).to.equal(initialSupply);
-        });
-        it("owner should have all the supply", async () => {
-            const ownerBalance = await contract.balanceOf(ownerAddress);
-            expect(ownerBalance).to.equal(initialSupply);
-        });
+       
         it("Should check addr", async() =>{
-            const check = await CryptoBlockLab2.DataStructure(address.address);
-            let ad = await CryptoBlockLab2.DataStructure(address.address);
+            const check = await CryptoBlockLab2.DataStructure(ownerAddress.address);
+            let ad = await CryptoBlockLab2.DataStructure(ownerAddress.address);
             expect (ad.address).to.equal(address.address)
         });
+      
+        it("Should set value Alice", async() =>{
+            const value = await CryptoBlockLab2.getDataStructure(aliceAddress.address, DataStruc);
+            let ad = await CryptoBlockLab2.DataStruc(aliceAddress.address, DataStruc);
+            expect (ad.address).to.equal(ownerAddress.address)
+        });
+      
+        it("Should set value Bob", async() =>{
+            const value = await CryptoBlockLab2.getDataStructure(bobAddress.address, DataStruc);
+            let ad = await CryptoBlockLab2.DataStruc(bobAddress.address, DataStruc);
+            expect (ad.address).to.equal(ownerAddress.address)
+        });
+      
+        it("Should get value", async() =>{
+            let ad = await CryptoBlockLab2.DataStruc(ownerAddress.address, DataStruc);
+        });
+      
+      
     });
 
     describe("Core", () => {
